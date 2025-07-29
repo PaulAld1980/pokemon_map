@@ -88,3 +88,9 @@ local_settings.py
 .env
 db.sqlite3
 media/
+
+.idea/
+.venv/
+__pycache__/
+*.pyc
+db.sqlite3
