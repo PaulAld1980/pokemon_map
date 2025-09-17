@@ -81,10 +81,10 @@ def show_pokemon(request, pokemon_id):
             'img_url': request.build_absolute_uri(pokemon.previous_evolution.image.url) if pokemon.previous_evolution.image else DEFAULT_IMAGE_URL
             } if pokemon.previous_evolution else None,
         'next_evolution': {
-            'pokemon_id': pokemon.next_evolution.first().id,
-            'title_ru': pokemon.next_evolution.first().title,
-            'img_url': request.build_absolute_uri(pokemon.next_evolution.first().image.url) if pokemon.next_evolution.first().image else DEFAULT_IMAGE_URL
-            } if pokemon.next_evolution.first() else None
+            'pokemon_id': pokemon.next_evolutions.first().id,
+            'title_ru': pokemon.next_evolutions.first().title,
+            'img_url': request.build_absolute_uri(pokemon.next_evolutions.first().image.url) if pokemon.next_evolutions.first().image else DEFAULT_IMAGE_URL
+            } if pokemon.next_evolutions.first() else None
         }
 
     return render(request, 'pokemon.html', context={
